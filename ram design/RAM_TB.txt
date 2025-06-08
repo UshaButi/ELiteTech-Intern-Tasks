@@ -1,0 +1,70 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: EliteTech
+// Engineer: UshaButi
+// 
+// Create Date: 06.06.2025 08:18:01
+// Design Name: simple synchronous ram
+// Module Name: simple_sync_ram_tb
+// Project Name: simple synchronous ram
+// Target Devices: 
+// Tool Versions: 
+// Description: Create a simple synchronous RAM
+//  testbench code with read/write capabilities. 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module simple_sync_ram_tb();
+    reg clk;                   // Clock
+    reg  we;                    // Write Enable
+    reg[3:0] addr;            // 4-bit address (0 to 15)
+    reg[7:0] din;            // Data input (8-bit)
+    wire [7:0] dout;        // Data output (8-bit)
+    
+    
+    // Instantiate RAM
+    simple_sync_ram uut(
+    .clk(clk) ,
+    .we (we ) ,
+    .addr(addr),
+    .din(din),
+    .dout(dout)
+    );
+    
+    // Clock generation
+    always #10 clk=~clk;
+    
+    initial begin
+        clk = 0;
+        we  = 0;
+        addr = 0;
+        din = 0;
+        
+    // Write 0xAA to address 2
+    #10
+    we = 1; addr = 4'd2; din = 8'hAA;
+    
+    // Write 0xAF to address 8
+    #10
+    we = 1; addr = 4'd8; din = 8'hAF;
+    
+    // Read from address 2
+    #10
+    we = 0; addr = 4'd2;
+    
+    // Read from address 8
+    #10
+    we = 0; addr = 4'd8;
+    #10
+    
+    $stop;
+end
+    
+endmodule
