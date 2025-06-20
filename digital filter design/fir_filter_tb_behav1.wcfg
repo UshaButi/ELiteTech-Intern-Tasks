@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fir_filter_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fir_filter_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="4" />
+   <wvobject db_ref_id="1" fp_name="/fir_filter_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/fir_filter_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/fir_filter_tb/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/fir_filter_tb/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+</wave_config>
